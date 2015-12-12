@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $http, BookService) {
+.controller('BooksCtrl', function($scope, $http, BookService) {
   BookService.index()
   .then(function(res) {
     $scope.books = res.data;

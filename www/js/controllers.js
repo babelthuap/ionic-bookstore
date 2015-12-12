@@ -1,6 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('BooksCtrl', function($scope, $http, BookService) {
+.controller('HomeCtrl', function($scope) {})
+
+.controller('BooksCtrl', function($scope, BookService) {
   BookService.index()
   .then(function(res) {
     $scope.books = res.data;
@@ -11,6 +13,10 @@ angular.module('starter.controllers', [])
   $scope.addToCart = function(book) {
     console.log('add to cart:', book);
   }
+})
+
+.controller('CartCtrl', function($scope) {
+  $scope.cart = [1, 2, 3];
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {
